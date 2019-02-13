@@ -5,7 +5,7 @@ fn main() {
     // get roots
     let roots = qes::calculate_root();
 
-    // closure to print i
+    // closure to print string
     let print = |string: &str| {
         print!("{}", string);
         // flush
