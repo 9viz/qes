@@ -68,15 +68,6 @@ pub fn calculate_root() -> (f64, f64, bool) {
      * the returned values are root, root, is_real bool
      */
 
-    // closure to find the absolute value
-    let abs = |n: &f64| {
-        if *n < 0.0 {
-            return -n;
-        }
-
-        return *n;
-    };
-
     let mut is_real: bool = true;
 
     // get the coefficients
@@ -92,7 +83,7 @@ pub fn calculate_root() -> (f64, f64, bool) {
     if determinant < 0.0 { is_real = false; }
 
     // take the abs value of determinant
-    let determinant = abs(&determinant);
+    let determinant = determinant.abs();
 
     // calculate -b/2a
     let fraction: f64 = -cofx / (2.0 * cofxsq);
