@@ -52,6 +52,12 @@ fn get_coeff() -> (f64, f64, f64) {
 
     // coefficient of x squared
     let coefxsq: f64 = input(&"enter the coefficient of x squared: ");
+
+    if coefxsq == 0.0 {
+        println!("This is not a quadratic equation!");
+        std::process::exit(1);
+    }
+
     // coefficient of x
     let coefx: f64 = input(&"enter the coefficient of x: ");
     // the constant value
@@ -75,6 +81,13 @@ pub fn calculate_root() -> (f64, f64, bool) {
     let cofxsq = coeffs.0;
     let cofx = coeffs.1;
     let cons = coeffs.2;
+
+    println!(
+        "the quadratic equation is {}x^2 + {}x + {}",
+        cofxsq,
+        cofx,
+        cons
+    );
 
     // calculate the determinant
     let determinant = determinant(&cofxsq, &cofx, &cons);
